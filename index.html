@@ -1,11 +1,604 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Đình Hoà &amp; Thu Thảo - Đám Cưới</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Đình Hoà &amp; Thu Thảo - Our wedding date: 2026-09-20 | Tình yêu không làm cho thế giới quay tròn. Tình yêu là những gì làm cho chuyến đi đáng giá">
+    <meta name="keywords" content="Wedding, Wedding website, Website đám cưới, Đám Cưới Đình Hoà &amp; Thu Thảo">
+    <meta property="og:site_name" content="Đình Hoà &amp; Thu Thảo">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Đình Hoà &amp; Thu Thảo Wedding site!">
+    <meta property="og:url" content="https://dinhhoathuthao.com">
+    <meta property="og:description" content="Đình Hoà &amp; Thu Thảo - Our wedding date: 2026-09-20 | Tình yêu không làm cho thế giới quay tròn. Tình yêu là những gì làm cho chuyến đi đáng giá">
+    <meta property="og:image" content="assets/image/3f186a_000d2a36b516f5f4b296863ff652fe1b.jpeg">
+    <meta property="og:image:url" content="assets/image/3f186a_000d2a36b516f5f4b296863ff652fe1b.jpeg">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="application-name" content="Wedding">
+    <meta name="author" content="Đình Hoà &amp; Thu Thảo">
+    <meta property="og:image:secure_url" content="assets/image/3f186a_000d2a36b516f5f4b296863ff652fe1b.jpeg">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/image/icon_trai_tim_nho.png">
+    <link href="https://fonts.googleapis.com/css2?family=Texturina:opsz,wght@12..72,100&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100&display=swap" rel="stylesheet">
+    <link href="assets/css/libs.css" rel="stylesheet">
+    <link href="assets/css/calendar.css" rel="stylesheet">
+    <link href="assets/css/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<script type="text/javascript">
+    var photoGalleries = [];
+    </script>
+<body>
+    <div class="wrapper shadow">
+        <header id="header" class="site-header header-style-1 d-none">
+            <nav class="navbar bg-white shadow-sm py-1">
+                <div class="container-fluid">
+                    <div class="w-100 d-flex align-items-center justify-content-between">
+                        <a class="section-title navbar-brand" href="#">ĐH &amp; TT</a>
+                        <button class="navbar-toggler rounded-0 border-0 p-0" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <i class="bi bi-list fs-3 text-black"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-  <h1>hello</h1>
+        <section class="banner-section">
+            <div class="main_area p-3 py-5">
+                <div class="day_wrapper" data-aos="fade-up" data-aos-delay="500">
+                    <div class="day_area text-center d-flex">
+                        <div class="section-sub-title day_area_inner text-center m-1 w-100 d-flex flex-column justify-content-center">
+                            <span class="day">20 / 09</span>
+                            <span class="yoil">Chủ Nhật</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_image_area pt-4" data-aos="fade-up" data-aos-delay="50">
+                    <div class="main_image">
+                        <img src="assets/image/anh_bia_1.jpg">
+                    </div>
+                </div>
+                <div class="section-title wedding_area pt-5 mt-1" data-aos="fade-up" data-aos-delay="800">
+                    <span class="groom_name fcim">Đình Hoà</span>
+                    <img src="assets/image/icon_trai_tim_nho.png" style="width: 50px" />
+                    <span class="bride_name fcim">Thu Thảo</span>
+                </div>
+            </div>
+        </section>
 
-  </body>
+                <section class="py-4 accessibilities-section">
+            <div class="container-fluid">
+                <div class="row gx-2 justify-content-center">
+                                        
+                                                            
+                                                            <div class="col-sm-4">
+                        <a href="javascript:void(0)" class="w-100 mb-1 accessibility-btn btn btn-secondary buttonDonate"
+                            data-aos="fade-left">
+                            <span class="content-button">
+                                <img class="access-section-icon" src="assets/image/icon_mung_cuoi.png" alt="access-btn"> Mừng cưới
+                            </span>
+                        </a>
+                    </div>
+                                    </div>
+            </div>
+        </section>
+        
+        
+                <section class="py-5 gallery-section section-bg-affect" id="gallery">
+            <div class="container-fluid">
+                <h2 class="section-title text-center" data-aos="zoom-in-up">
+                    Album Hình Cưới
+                </h2>
+                <h3 class="section-sub-title mb-4 text-center" data-aos="zoom-in-up">
+                    Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó sâu sắc sẽ cho bạn dũng khí.
+                </h3>
+                <div class="row gx-2" id="photoGalleryContainer">
+                                            <script type="text/javascript">
+                        photoGalleries.push({
+                            src : "assets/image/anh_album_day_du_8.jpg",
+                            thumb: "assets/image/anh_album_thu_nho_3.jpg",
+                            subHtml: `<div class="lg-sub-html"><h4></h4></div>`
+                        });
+                        </script>
+                        
+                                                    <div class="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos="fade-right"
+                                data-index="0"> <img src="assets/image/anh_album_thu_nho_3.jpg" />
+                            </div>
+                                                                    <script type="text/javascript">
+                        photoGalleries.push({
+                            src : "assets/image/anh_album_day_du_4.jpg",
+                            thumb: "assets/image/anh_album_thu_nho_5.jpg",
+                            subHtml: `<div class="lg-sub-html"><h4></h4></div>`
+                        });
+                        </script>
+                        
+                                                    <div class="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos="fade-left"
+                                data-index="1"> <img src="assets/image/anh_album_thu_nho_5.jpg" />
+                            </div>
+                                                                    <script type="text/javascript">
+                        photoGalleries.push({
+                            src : "assets/image/anh_album_day_du_7.jpg",
+                            thumb: "assets/image/anh_album_thu_nho_10.jpg",
+                            subHtml: `<div class="lg-sub-html"><h4></h4></div>`
+                        });
+                        </script>
+                        
+                                                    <div class="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos="fade-right"
+                                data-index="2"> <img src="assets/image/anh_album_thu_nho_10.jpg" />
+                            </div>
+                                                                    <script type="text/javascript">
+                        photoGalleries.push({
+                            src : "assets/image/anh_album_day_du_9.jpg",
+                            thumb: "assets/image/anh_album_thu_nho_1.jpg",
+                            subHtml: `<div class="lg-sub-html"><h4></h4></div>`
+                        });
+                        </script>
+                        
+                                                    <div class="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos="fade-left"
+                                data-index="3"> <img src="assets/image/anh_album_thu_nho_1.jpg" />
+                            </div>
+                                                                    <script type="text/javascript">
+                        photoGalleries.push({
+                            src : "assets/image/anh_album_day_du_5.jpg",
+                            thumb: "assets/image/anh_album_thu_nho_4.jpg",
+                            subHtml: `<div class="lg-sub-html"><h4></h4></div>`
+                        });
+                        </script>
+                        
+                                                    <div class="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos="fade-right"
+                                data-index="4"> <img src="assets/image/anh_album_thu_nho_4.jpg" />
+                            </div>
+                                                                    <script type="text/javascript">
+                        photoGalleries.push({
+                            src : "assets/image/anh_album_day_du_2.jpg",
+                            thumb: "assets/image/anh_album_thu_nho_7.jpg",
+                            subHtml: `<div class="lg-sub-html"><h4></h4></div>`
+                        });
+                        </script>
+                        
+                                                    <div class="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos="fade-left"
+                                data-index="5"> <img src="assets/image/anh_album_thu_nho_7.jpg" />
+                            </div>
+                                                                    <script type="text/javascript">
+                        photoGalleries.push({
+                            src : "assets/image/anh_album_day_du_3.jpg",
+                            thumb: "assets/image/anh_album_thu_nho_6.jpg",
+                            subHtml: `<div class="lg-sub-html"><h4></h4></div>`
+                        });
+                        </script>
+                        
+                                                    <div class="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos="fade-right"
+                                data-index="6"> <img src="assets/image/anh_album_thu_nho_6.jpg" />
+                            </div>
+                                                                    <script type="text/javascript">
+                        photoGalleries.push({
+                            src : "assets/image/anh_album_day_du_1.jpg",
+                            thumb: "assets/image/anh_album_thu_nho_9.jpg",
+                            subHtml: `<div class="lg-sub-html"><h4></h4></div>`
+                        });
+                        </script>
+                        
+                                                    <div class="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos="fade-left"
+                                data-index="7"> <img src="assets/image/anh_album_thu_nho_9.jpg" />
+                            </div>
+                                                                    <script type="text/javascript">
+                        photoGalleries.push({
+                            src : "assets/image/anh_album_day_du_6.jpg",
+                            thumb: "assets/image/anh_album_thu_nho_2.jpg",
+                            subHtml: `<div class="lg-sub-html"><h4></h4></div>`
+                        });
+                        </script>
+                        
+                                                    <div class="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos="fade-right"
+                                data-index="8"> <img src="assets/image/anh_album_thu_nho_2.jpg" />
+                            </div>
+                                                                    <script type="text/javascript">
+                        photoGalleries.push({
+                            src : "assets/image/anh_album_day_du_10.jpg",
+                            thumb: "assets/image/anh_album_thu_nho_8.jpg",
+                            subHtml: `<div class="lg-sub-html"><h4></h4></div>`
+                        });
+                        </script>
+                        
+                                                    <div class="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos="fade-left"
+                                data-index="9"> <img src="assets/image/anh_album_thu_nho_8.jpg" />
+                            </div>
+                                                            </div>
 
+                            </div>
+        </section>
+        
+        <section class="py-5 weddingdate-section section-bg-affect" id="weddingdate">
+            <div class="container-fluid">
+                <div class="w-100">
+                    <div class="m-auto pt-5 pb-3" data-aos="fade-up">
+                        <div class="mini_calendar">
+<table>
+<caption class="calendar-month">Th&aacute;ng 9 / 2026</caption>
+<tr><th abbr="Monday">Thứ 2</th><th abbr="Tuesday">Thứ 3</th><th abbr="Wednesday">Thứ 4</th><th abbr="Thursday">Thứ 5</th><th abbr="Friday">Thứ 6</th><th abbr="Saturday">Thứ 7</th><th abbr="Sunday">CN</th></tr>
+<tr><td>&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+<tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+<tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td><div id="today">20</div></td></tr>
+<tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+<tr><td>28</td><td>29</td><td>30</td><td id="emptydays" colspan="4">&nbsp;</td></tr>
+</table>
+</div>
+
+                    </div>
+                    <div class="countdown" data-aos="fade-up-left">
+                        <div class="m-auto" id="clock" data-date="2026-09-20" data-text-day="Ngày" data-text-hour="Giờ"
+                            data-text-minute="Phút" data-text-second="Giây"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <section class="py-5 story-section section-bg-affect" id="story">
+            <div class="container-fluid">
+                <h2 data-aos="fade-up" class="section-title text-center">
+                    Chuyện tình yêu
+                </h2>
+                <h3 data-aos="fade-up" class="section-sub-title mb-4 text-center">
+                    Tình yêu không chỉ là một danh từ - nó là một động từ; nó còn hơn cả một cảm giác - đó là sự quan tâm, chia sẻ, giúp đỡ, hy sinh.
+                </h3>
+                <div class="story-content">
+                    <div class="timeline">
+                        <div class="outer">
+                                                        <div class="timeline-card" data-aos="fade-right">
+                                <div class="info">
+                                    <span class="date">20/09/2026</span>
+                                    <h3 class="title">Ngày thành hôn</h3>
+                                    <p>
+                                        “Tiếng trái tim đôi ta đập thật nhanh. Thì thầm lời yêu thương. Ngày tình về chung đôi...” Sau bao nhiêu chờ đợi, cuối cùng ngày vui của chúng ta cũng tới rồi. Cảm ơn vì mình đã luôn là một phần trong cuộc sống của nhau. Em và anh không chỉ là người yêu mà chúng ta còn là tri kỷ. Ngày hôm nay, em sẽ là cô dâu của anh và sau này sẽ là mẹ của các con anh.
+                                    </p>
+                                    <div class="img-holder">
+                                        <img src="assets/image/anh_chuyen_tinh_yeu.jpeg" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-5 invitation-section section-bg-affect" id="invitation">
+            <div class="container-fluid">
+                <div class="w-100">
+                    <div data-aos="fade-up" class="invation-title">
+                        <span class="p-5 fw-bold text-center">20 / 09</span>
+                        <h3 class="text-center text-white">Lời Ngỏ</h3>
+                    </div>
+                    <div>
+                        <div data-aos="fade-up" class="invitation-content my-5 text-center">
+                            Cảm ơn tất cả những người bạn thân yêu của tôi!<br />
+Tôi biết các bạn rất bận rộn, bận rộn với công việc, bận rộn với công việc gia đình…<br />
+Nhưng tất cả đã có mặt hôm nay để chúc mừng tinh yêu và hạnh phúc của chúng tôi.<br />
+Một lần nữa chân thành cảm ơn tất cả các bạn!
+                        </div>
+                        <div data-aos="fade-up"
+                            class="section-title invitation-couple mb-5 d-flex align-items-center justify-content-center my-4 fs-4">
+                            <span class="text-center">Đình Hoà</span>
+                            <i class="bi bi-heart-fill mx-2 fs-6 px-2"></i>
+                            <span class="text-center">Thu Thảo</span>
+                        </div>
+                        <div data-aos="fade-up" class="couple-img mb-5">
+                            <img src="assets/image/anh_loi_ngo.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <section class="py-5 event-section section-bg-affect" id="event">
+            <div class="container-fluid">
+                <h2 data-aos="fade-up" class="section-title text-center">
+                    Sự Kiện Cưới
+                </h2>
+                <h3 data-aos="fade-up" class="section-sub-title mb-4 text-center">
+                    Trân trọng báo tin và kính mời quý khách đến dự buổi tiệc chung vui cùng gia đình chúng tôi!
+                </h3>
+                                                        <div data-aos="flip-right" class="event-item d-flex flex-row p-0 border-0 rounded overflow-hidden">
+                        <div class="image-wrap" style="background-image: url('assets/image/e11393_58b2a254190057dba19c3d236cc22743.jpeg');">
+                                                    </div>
+                        <div class="info-wrap p-3">
+                            <h5 class="section-sub-title">LỄ THÀNH HÔN & VU QUY</h5>
+                            <strong>09:10 20/09/2026</strong>
+                            <p class="card-text">
+                                                                    <span>Tư gia nam - </span>
+                                                                Thôn Gia Huệ, xã Vu Gia, TP Đà Nẵng
+                            </p>
+                            <p class="card-text mb-1" style="font-style: italic; font-size: 14px;">(Nhằm ngày 10 Tháng 08 năm Bính Ngọ)</p>
+                            <a href="https://www.google.com/maps/search/Th%C3%B4n+Gia+Hu%E1%BB%87,+x%C3%A3+Vu+Gia,+TP+%C4%90%C3%A0+N%E1%BA%B5ng" target="_blank" class="section-sub-title btn btn-sm btn-secondary">Xem bản đồ</a>
+                        </div>
+                    </div>
+                                                                            <div data-aos="flip-left" class="event-item d-flex flex-row p-0 border-0 rounded overflow-hidden">
+                        <div class="image-wrap" style="background-image: url('assets/image/b0ceb2_39ba8d7f38b0ca26334435f44bb188d6.jpeg');">
+                                                    </div>
+                        <div class="info-wrap p-3">
+                            <h5 class="section-sub-title">MỜI TIỆC</h5>
+                            <strong>10:30 20/09/2026</strong>
+                            <p class="card-text">
+                                                                    <span>Nhà hàng tiệc cưới Phú Thịnh - </span>
+                                                                Thôn Gia Huệ, xã Vu Gia, TP Đà Nẵng
+                            </p>
+                            <p class="card-text mb-1" style="font-style: italic; font-size: 14px;">(Chủ Nhật, Nhằm ngày 10 Tháng 08 năm Bính Ngọ)</p>
+                            <a href="https://www.google.com/maps/search/Nh%C3%A0+h%C3%A0ng+ti%E1%BB%87c+c%C6%B0%E1%BB%9Bi+Ph%C3%BA+Th%E1%BB%8Bnh,+Th%C3%B4n+Gia+Hu%E1%BB%87,+x%C3%A3+Vu+Gia,+TP+%C4%90%C3%A0+N%E1%BA%B5ng" target="_blank" class="section-sub-title btn btn-sm btn-secondary">Xem bản đồ</a>
+                        </div>
+                    </div>
+                                                </div>
+        </section>
+        
+        <section class="py-5 couple-section section-bg-affect" id="couple">
+            <div class="container-fluid">
+                <h2 data-aos="fade-up" class="section-title text-center m-0">
+                    Cô Dâu &amp; Chú Rể
+                </h2>
+                <h3 data-aos="fade-up" class="section-sub-title mb-0 text-center">
+                    Giới thiệu một chú rể đẹp trai và cô dâu xinh đẹp
+                </h3>
+                <div class="section-title wrap-people d-flex mt-5">
+                    <div class="member member-groom mb-4 w-50">
+                        <div data-aos="flip-left" class="member-image animation">
+                            <img src="assets/image/anh_chu_re.jpeg" />
+                        </div>
+                        <div data-aos="fade-left" class="member-name py-2 fw-bold">
+                            Nguyễn Đình Hoà<br><span style="font-size: 14px; font-weight: normal;">(Út nam)</span>
+                        </div>
+                        <ul data-aos="fade-up" class="member-contact social-links d-flex p-0 mb-0">
+                            
+                            
+                                                    </ul>
+                                                <div class="parent my-2 d-flex flex-column text-center mx-auto"> 
+
+                                                        <div>Ông: <span class="parent-name">Nguyễn Đình Trung</span></div>
+                                                        <div>Bà: <span class="parent-name">Lê Thị Bích Thuỳ</span></div>
+                                                        <div style="font-size: 13px; font-style: italic; color: #666; margin-top: 5px;">Thôn Gia Huệ, xã Vu Gia, TP Đà Nẵng</div>
+                            
+                        </div>
+                               
+                        <div class="groom-story d-flex flex-column">
+							<p class="text-story fs-6 text-center mb-0">
+						         Là một người hiền lành và ít nói. Luôn coi trọng tình cảm và yêu thương gia đình. Với anh: “Gia đình là điểm tựa vững chắc nhất và là bến đỗ bình yên không đâu sánh bằng đối với mỗi con người. Đó luôn là nơi tràn ngập tình yêu thương để ta trở về.”
+							</p>
+							<a class="fs-6 fw-bold text-center text-decoration-none" tabindex="0" role="button"
+							data-bs-toggle="popover" 
+							data-bs-trigger="focus" 
+							data-bs-placement="bottom" 
+							data-bs-content=" Là một người hiền lành và ít nói. Luôn coi trọng tình cảm và yêu thương gia đình. Với anh: “Gia đình là điểm tựa vững chắc nhất và là bến đỗ bình yên không đâu sánh bằng đối với mỗi con người. Đó luôn là nơi tràn ngập tình yêu thương để ta trở về.”">Xem thêm</a>
+						</div>
+                        
+                    </div>
+                    <div class="member member-bride w-50">
+                        <div data-aos="flip-right" class="member-image animation">
+                            <img src="assets/image/anh_co_dau.jpeg" />
+                        </div>
+                        <div data-aos="fade-right" class="member-name py-2 fw-bold">
+                            Nguyễn Thị Thu Thảo<br><span style="font-size: 14px; font-weight: normal;">(Trưởng nữ)</span>
+                        </div>
+                        <ul data-aos="fade-up" class="member-contact social-links d-flex p-0 mb-0">
+                             
+
+                             
+
+                             
+                        </ul>
+                                                <div class="parent my-2 d-flex flex-column text-center mx-auto"> 
+                                                        <div>Ông: <span class="parent-name">Nguyễn Anh</span></div>
+                                                        <div>Bà: <span class="parent-name">Phạm Thị Mười</span></div>
+                                                        <div style="font-size: 13px; font-style: italic; color: #666; margin-top: 5px;">Thôn Phiếm Ái, xã Đại Lộc, TP Đà Nẵng</div>
+                             
+                        </div>
+                                    
+                        <div class="bride-story d-flex flex-column">
+						   <p class="text-story fs-6 text-center mb-0">
+                            Em là cô gái với nhiều mộng mơ. Là một người hay cười nhưng lại sống nội tâm, thích đọc sách, trồng cây và yêu thiên nhiên. Em ước mơ có 1 mái ấm hạnh phúc, cùng chồng mình làm nên những điều đẹp đẽ của phần còn lại của cuộc đời. Yêu anh.
+						   </p>
+						   <a class="fs-6 fw-bold text-center text-decoration-none" tabindex="0" role="button"
+						 	data-bs-toggle="popover" 
+						 	data-bs-trigger="focus" 
+						 	data-bs-placement="bottom" 
+						 	data-bs-content="Em là cô gái với nhiều mộng mơ. Là một người hay cười nhưng lại sống nội tâm, thích đọc sách, trồng cây và yêu thiên nhiên. Em ước mơ có 1 mái ấm hạnh phúc, cùng chồng mình làm nên những điều đẹp đẽ của phần còn lại của cuộc đời. Yêu anh.">Xem thêm</a>
+						</div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+                <section class="py-5 bg-white donate-section section-bg-affect" id="donate">
+            <div class="container-fluid ">
+               <div class="w-100">
+                  <h2 data-aos="fade-up" class="section-title text-center m-0">
+                    Hộp mừng cưới 
+                  </h2>
+                  <h3 data-aos="fade-up" class="section-sub-title mb-4 text-center">
+                    Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt như đám cưới của chúng tôi. 
+                  </h3>
+                  <div class="row d-flex justify-content-around donate-box mb-1">
+                                          <div data-aos="fade-right" class="col-6 mb-4 donate-wrap">
+                        <div class="donate-card p-3 rounded text-center">
+                           <strong class="d-block sub-title mb-2 text-uppercase">Đến chú rể</strong>
+                                                     
+                           <img class="qr-code-image m-auto mb-2" src="assets/image/qr_code_chu_re.jpeg">
+                                                          <p class="mb-1">Ngân hàng: <strong>Techcombank</strong></p>
+                               <p class="mb-1">
+                                  Tên tài khoản: <strong>Nguyễn Đình Hoà</strong>
+                               </p>
+                               <p class="mb-1">
+                                  Số tài khoản: <strong>19034539698012</strong>
+                               </p>
+                                                                                  </div>
+                     </div>
+                                                               <div data-aos="fade-left" class="col-6 donate-wrap">
+                        <div class="donate-card p-3 rounded text-center">
+                           <strong class="d-block sub-title mb-2 text-uppercase">Đến cô dâu</strong>
+                                                      <img class="qr-code-image m-auto mb-2" src="assets/image/qr_code_chu_re.jpeg">
+                                                          <p class="mb-1">Ngân hàng: <strong>Techcombank</strong></p>
+                               <p class="mb-1">
+                                  Tên tài khoản: <strong>Nguyễn Đình Hoà</strong>
+                               </p>
+                               <p class="mb-1">
+                                  Số tài khoản: <strong>19034539698012</strong>
+                               </p>
+                                                                                  </div>
+                     </div>
+                                       </div>
+               </div>
+            </div>
+        </section>
+        
+                
+        
+        <section class="section-title footer-section py-5 text-center section-bg-affect">
+            <div class="container-fluid">
+                <h3 class="title">Thank you!</h3>
+                <h5 class="sub-title">-- Đình Hoà & Thu Thảo --</h5>
+            </div>
+        </section>
+    </div>
+
+    <div class="offcanvas offcanvas-end offcanvas-menu" tabindex="-1" id="offcanvasNavbar" data-bs-scroll="true"
+    data-bs-backdrop="true" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1">
+            <div class="offcanvas-header pb-4 pt-2 px-2 justify-content-end">
+                <button type="button" class="btn-close p-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            
+                        <li class="nav-item">
+                <a class="section-sub-title nav-link active" aria-current="page" href="#gallery">Album Hình Cưới</a>
+            </li>
+            
+                        <li class="nav-item">
+                <a class="section-sub-title nav-link active" aria-current="page" href="#story">Chuyện tình yêu</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="section-sub-title nav-link active" aria-current="page" href="#invitation">Lời Ngỏ</a>
+            </li>
+
+                        <li class="nav-item">
+                <a class="section-sub-title nav-link" href="#event">Sự kiện cưới</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="section-sub-title nav-link" href="#couple">Cô Dâu &amp; Chú Rể</a>
+            </li>
+
+            
+                        
+            
+                        <li class="nav-item">
+                <a class="section-sub-title nav-link" href="#donate">Mừng cưới</a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+    
+        <div class="py-5 donate-section donate-modal" id="donate-modal">
+    <div class="container-fluid donate-modal-content">
+        <span class="donate-modal-close text-danger">&times;</span>
+        <div class="w-100 p-4">   
+            <h2 data-aos="fade-up" class="section-title text-body text-center m-0">
+                Hộp mừng cưới 
+            </h2>
+            <h3 data-aos="fade-up" class="section-sub-title text-body mb-4 text-center">
+                Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt như đám cưới của chúng tôi. 
+            </h3>
+            <div class="row justify-content-center donate-box mb-1">
+                                <div data-aos="fade-right" class="col-6 px-4  mb-4">
+                    <div class="donate-card p-4 rounded text-center">
+                        <strong class="d-block sub-title mb-2 text-uppercase">Đến chú rể</strong>
+                                                <img class="qr-code-image m-auto mb-2" src="assets/image/qr_code_chu_re.jpeg">
+                                                    <p class="mb-1">Ngân hàng: <strong>Techcombank</strong></p>
+                            <p class="mb-1">
+                                Tên tài khoản: <strong>Nguyễn Đình Hoà</strong>
+                            </p>
+                            <p class="mb-1">
+                                Số tài khoản: <strong>19034539698012</strong>
+                            </p>
+                                                                        </div>
+                </div>
+                                                <div data-aos="fade-left" class="col-6 px-4 ">
+                    <div class="donate-card p-4 rounded text-center">
+                        <strong class="d-block sub-title mb-2 text-uppercase">Đến cô dâu</strong>
+                                                <img class="qr-code-image m-auto mb-2" src="assets/image/qr_code_chu_re.jpeg">
+                            
+                            <p class="mb-1">Ngân hàng: <strong>Techcombank</strong></p>
+                            <p class="mb-1">
+                                Tên tài khoản: <strong>Nguyễn Đình Hoà</strong>
+                            </p>
+                            <p class="mb-1">
+                                Số tài khoản: <strong>19034539698012</strong>
+                            </p>
+                                                                        </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+    </div>
+    
+        <div id="menu-access" class="">
+        <div class="btn-menu-open">
+            <i class="bi bi-list text-white"></i>
+        </div>
+        <div class="btn-menu-close">
+            <i class="bi bi-x-lg text-white"></i>
+        </div>
+        <ul class="p-0 m-0 list-menu-icon">
+                        
+            
+                        
+            
+                        <li class="text-center">
+                <a href="#donate" class="text-white">
+                    <span class="content-button tooltipBtn">
+                        <span class="tooltiptext">Mừng cưới</span>
+                        <img class="access-icon" src="assets/image/icon_mung_cuoi.png" alt="">
+                    </span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    
+    <script type="text/javascript">
+        function sanitizeJsonString(jsonString) {
+            return jsonString
+                .replace(/[\n\r\t]/g, '')
+                .replace(/[\u0000-\u001F]+/g, '')
+                .replace(/,(\s*[}\]])/g, '$1');
+        }
+        function parseJsonRecursively(jsonString) {
+            let sanitizedString = sanitizeJsonString(jsonString);
+            let parsed = JSON.parse(sanitizedString);
+            Object.keys(parsed).forEach(function(key) {
+                try {
+                	let checkValue = JSON.parse(parsed[key]);
+                	if (checkValue && checkValue.constructor === Object) {
+		                parsed[key] = checkValue;
+		            }
+                } catch (e) {
+
+                }
+            });
+            return parsed;
+        }
+        let biicore = parseJsonRecursively('{"template_id":"64257401855becefb90bba72","templatePremium":true,"themeRoot":"https:\/\/dinhhoa1994.github.io\/wedding\/","webroot":"https:\/\/dinhhoa1994.github.io\/wedding\/","coreSite":"https:\/\/biihappy.com","webToken":"6a51fe8e0c2c2f3aca08d0d3","isPremium":true,"bgMusic":"https:\/\/cdn.biihappy.com\/ziiweb\/wedding-musics\/IDo-911.mp3","alert":"[]","effect":"{\\\u0022type\\\u0022:\\\u0022heart\\\u0022}","logo":"https:\/\/iwedding.info\/common\/imgs\/bii.png?v=20210131","url_landing_page":"https:\/\/biihappy.com\/iwedding","isAutoPlay":false,"footer_title":"iWedding | N\u1ec1n t\u1ea3ng t\u1ea1o website \u0111\u00e1m c\u01b0\u1edbi mi\u1ec5n ph\u00ed t\u1eeb Biihappy","footer_title_mobile":"T\u1ea1o website \u0111\u00e1m c\u01b0\u1edbi mi\u1ec5n ph\u00ed","enable_editor":false,"dataGroupAttr":[]}');
+    </script>
+    <script src="assets/js/libs.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/calendar.js"></script>
+    <script src="assets/js/biicommon.min.js"></script>
+    <script src="assets/js/insertTextAtCursor.js"></script>
+	<script type="module" src="assets/js/init.js"></script>
+    <script src="assets/js/toastr.min.js"></script>
+    
+</body>
 </html>
