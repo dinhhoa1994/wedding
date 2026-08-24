@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algo-Xiangqi — M1 Overview</title>
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --text: #1a1f2e;
+      --muted: #4a5568;
+      --border: #dde1e8;
+      --accent: #b45309;
+      --accent2: #0d6e6e;
+      --link: #1d4ed8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .header .sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--muted);
+    }
+
+    .tag.hot {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: #fef3c7;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .toc-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1rem;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      padding: 0;
+    }
+
+    .toc > ol > li {
+      counter-increment: toc;
+      margin-bottom: 0.85rem;
+    }
+
+    .toc > ol > li > a {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .toc > ol > li > a:hover { color: var(--link); }
+
+    .toc > ol > li > a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 1.5rem;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0.35rem 0 0 2.25rem;
+    }
+
+    .toc ul li {
+      margin-bottom: 0.2rem;
+    }
+
+    .toc ul a {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .toc ul a:hover { color: var(--link); text-decoration: underline; }
+
+    /* ── Sections ── */
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    section h2 {
+      font-size: 1.35rem;
+      color: var(--accent2);
+      margin-bottom: 0.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    section h2 .num {
+      color: var(--accent);
+      margin-right: 0.4rem;
+    }
+
+    section > .intro {
+      color: var(--muted);
+      margin: 1rem 0 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    h3:first-of-type { margin-top: 0.5rem; }
+
+    p { color: var(--text); margin-bottom: 0.75rem; }
+
+    ul {
+      padding-left: 1.35rem;
+      color: var(--text);
+    }
+
+    ul li { margin-bottom: 0.3rem; }
+
+    li strong { color: var(--accent); }
+
+    code {
+      font-family: "Cascadia Code", "Fira Code", monospace;
+      font-size: 0.88em;
+      background: #eef0f4;
+      color: #7c2d12;
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 0.75rem 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.75rem;
+      text-align: left;
+      color: var(--text);
+    }
+
+    th {
+      background: #eef0f4;
+      font-weight: 600;
+      color: var(--accent2);
+    }
+
+    .arch {
+      font-family: "Cascadia Code", "Fira Code", monospace;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      background: #eef0f4;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.15rem;
+      white-space: pre;
+      color: var(--muted);
+      overflow-x: auto;
+      margin: 0.75rem 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 0.75rem 0;
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.15rem;
+    }
+
+    .card h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent2);
+      margin: 0 0 0.5rem;
+    }
+
+    .card ul { font-size: 0.9rem; }
+
+    .quote-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .quote-list li {
+      padding: 0.55rem 0 0.55rem 1rem;
+      border-left: 3px solid var(--border);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .quote-list.avoid li { border-left-color: #f87171; }
+    .quote-list.keep li { border-left-color: #34d399; }
+
+    .quote-list em { color: var(--muted); font-style: normal; }
+
+    .teach {
+      margin: 1.1rem 0 0.35rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--accent2);
+      font-size: 1.05rem;
+    }
+
+    .teach-why {
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      margin: 0.5rem 0 0.85rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .teach-why strong { color: var(--accent2); }
+
+    .do-dont {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .do-dont .box {
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .do-dont .dont {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+    }
+
+    .do-dont .do {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+    }
+
+    .do-dont h4 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 0.45rem;
+    }
+
+    .do-dont .dont h4 { color: #b91c1c; }
+    .do-dont .do h4 { color: #047857; }
+
+    .do-dont ul { padding-left: 1.1rem; margin: 0; }
+    .do-dont li { margin-bottom: 0.3rem; color: var(--text); }
+
+    .plain-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 8px;
+      padding: 1rem 1.15rem;
+      margin: 0.75rem 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .plain-box strong { color: var(--accent); }
+
+    .flow {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0;
+      counter-reset: step;
+    }
+
+    .flow li {
+      counter-increment: step;
+      display: flex;
+      gap: 0.85rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .flow li:last-child { border-bottom: none; }
+
+    .flow li::before {
+      content: counter(step);
+      flex-shrink: 0;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: var(--accent2);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding-top: 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .grid-2, .do-dont { grid-template-columns: 1fr; }
+      .page { padding: 1.25rem 1rem 3rem; }
+      section, .header, .toc { padding: 1.25rem 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <h1>♟️ Algo-Xiangqi</h1>
+      <p class="sub">Cờ Tướng Thuật Toán · engagement algo-game · M1 Overview</p>
+      <div class="tags">
+        <span class="tag hot">M1 Pass · DEC-057</span>
+        <span class="tag">Brownfield · DEC-055</span>
+        <span class="tag">2026-08-24</span>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="Mục lục">
+      <div class="toc-title">Mục lục</div>
+      <ol>
+        <li>
+          <a href="#overview">Overview toàn bộ dự án</a>
+          <ul>
+            <li><a href="#overview-what">Dự án là gì</a></li>
+            <li><a href="#overview-arch">Kiến trúc</a></li>
+            <li><a href="#overview-mvp">MVP đã chốt</a></li>
+            <li><a href="#overview-brownfield">Brownfield</a></li>
+            <li><a href="#overview-roadmap">Gói tài liệu & lộ trình</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#knowledge">Kiến thức cần có để đọc M1</a>
+        </li>
+        <li>
+          <a href="#lessons">Kinh nghiệm xương máu từ M1</a>
+        </li>
+      </ol>
+    </nav>
+
+    <!-- ═══ 01 OVERVIEW ═══ -->
+    <section id="overview">
+      <h2><span class="num">01</span>Overview toàn bộ dự án</h2>
+      <p class="intro">Giải thích ngắn gọn — đọc xong phần này là hiểu dự án làm gì, cho ai, và đang ở giai đoạn nào.</p>
+
+      <h3 id="overview-what">Dự án là gì — nói đơn giản</h3>
+      <div class="plain-box">
+        Hình dung: bạn chơi Cờ Tướng trên mạng, nhưng <strong>không tự bấm quân</strong>. Bạn viết chương trình (bot) bằng JavaScript/TypeScript. Server ghép bot với bot (hoặc bot với người), cho chúng đánh nhau, rồi bạn <strong>xem lại trận như xem video</strong> — tua, pause, xem bot “suy nghĩ” gì trong log.
+      </div>
+      <p><strong>Algo-Xiangqi</strong> = sân chơi cho lập trình viên thi thuật toán qua Cờ Tướng: viết bot → đem bot đi đấu → leo bảng xếp hạng (Elo) → xem replay để cải thiện code.</p>
+
+      <p><strong>Người chơi làm gì từng bước:</strong></p>
+      <ol class="flow">
+        <li><span>Đăng ký / đăng nhập (email, Google, hoặc chơi thử guest)</span></li>
+        <li><span>Viết bot trên trình soạn code web (Monaco Editor), lưu nhiều phiên bản (v1.0, v1.1…)</span></li>
+        <li><span>Chọn <strong>một</strong> phiên bản làm “đại diện” (Active Bot) mang đi đấu mọi chế độ</span></li>
+        <li><span>Chọn chế độ (Cờ Ngửa / Úp / Thế) và thể loại (xếp hạng, luyện tập, treo máy, đấu Boss…)</span></li>
+        <li><span>Server tự chạy trận — bot của bạn nhận thế cờ, trả về nước đi trong thời gian giới hạn (500ms/lượt)</span></li>
+        <li><span>Xem kết quả, replay trận, xem log bot in ra — rồi sửa code và thử lại</span></li>
+      </ol>
+
+      <h3 id="overview-arch">Hệ thống gồm những khối nào</h3>
+      <p>Không cần nhớ tên kỹ thuật — chỉ cần hiểu <em>ai làm việc gì</em>:</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Giao diện web (FE)</h3>
+          <ul>
+            <li>Nơi viết code bot</li>
+            <li>Nơi xem replay bàn cờ</li>
+            <li>Dashboard, bảng xếp hạng, hồ sơ, guild</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Máy chủ (BE)</h3>
+          <ul>
+            <li>Ghép trận, tính Elo</li>
+            <li>Kiểm tra nước đi hợp lệ</li>
+            <li>Điều phối luồng chơi realtime</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Sandbox (hộp cát)</h3>
+          <ul>
+            <li>Chạy code bot an toàn, tách biệt</li>
+            <li>Giới hạn CPU, RAM, thời gian</li>
+            <li>Chống bot chạy vô hạn hoặc phá hệ thống</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Dữ liệu</h3>
+          <ul>
+            <li>Lưu bot, lịch sử trận (PGN/JSON)</li>
+            <li>Redis cache bảng xếp hạng</li>
+            <li>Chưa có database riêng — theo code nền hiện tại</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 id="overview-mvp">Sản phẩm MVP sẽ có gì (đã chốt)</h3>
+      <div class="grid-2">
+        <div class="card">
+          <h3>3 cách chơi cờ</h3>
+          <ul>
+            <li><strong>Cờ Ngửa</strong> — thấy hết quân, thuần tính toán (như cờ bình thường)</li>
+            <li><strong>Cờ Úp</strong> — quân úp, bot phải đoán và chấp nhận rủi ro</li>
+            <li><strong>Cờ Thế</strong> — giải bài tập: đi N nước để thắng từ thế cho sẵn</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>5 kiểu thi đấu</h3>
+          <ul>
+            <li><strong>1v1 / 2v2 xếp hạng</strong> — có Elo, ghép đối thủ ngang tầm</li>
+            <li><strong>Scrim</strong> — đấu thử, không mất điểm</li>
+            <li><strong>Auto Fight</strong> — treo máy, server tự xếp trận khi bạn offline</li>
+            <li><strong>Boss</strong> — 5 cấp độ, có thể sửa code ngay trong trận</li>
+          </ul>
+        </div>
+      </div>
+      <p>Thêm: đăng ký + Google + guest · luật cờ Việt Nam phổ thông · bot chỉ JS/TS · mỗi lượt bot có tối đa 500ms · guild tạo/join tự do.</p>
+
+      <h3 id="overview-brownfield">Không xây mới từ đầu — sửa từ game cũ</h3>
+      <div class="plain-box">
+        Trong repo đã có sẵn nền tảng game <strong>Bomberman</strong> (đặt bom, realtime). Dự án <strong>không viết lại từ con số 0</strong> mà: giữ khung nền (tạo phòng, WebSocket, đăng ký game…) → gỡ phần Bomberman → xây logic Cờ Tướng lên trên. Giống <em>sửa nhà cũ</em> thay vì <em>đập xây mới</em>.
+      </div>
+      <table>
+        <tr><th>Giữ lại từ code cũ</th><th>Bỏ / thay mới</th></tr>
+        <tr><td>Khung đa game (GameRegistry, BaseGame…)</td><td>Toàn bộ engine Bomberman</td></tr>
+        <tr><td>API, WebSocket, services dùng chung</td><td>Map, mode, asset Bomberman</td></tr>
+        <tr><td>Shell giao diện platform</td><td>Màn hình &amp; renderer PixiJS của Bomberman</td></tr>
+        <tr><td colspan="2"><strong>Phải làm mới:</strong> luật cờ, sandbox bot, Monaco IDE, replay Canvas, matchmaking Xiangqi</td></tr>
+      </table>
+
+      <h3 id="overview-roadmap">Tài liệu &amp; các giai đoạn tiếp theo</h3>
+      <p>Engagement chia theo mốc Discovery — mỗi mốc có deliverable rõ:</p>
+      <table>
+        <tr><th>Mốc</th><th>Làm gì</th><th>Trạng thái</th></tr>
+        <tr><td><strong>M1</strong></td><td>Thu thập nguồn, viết bản nháp 6 file nghiệp vụ, index code nền, stakeholder Pass review</td><td>✅ Xong</td></tr>
+        <tr><td><strong>M2</strong></td><td>Chi tiết entity, luồng màn hình, list module giữ/xóa cụ thể</td><td>Chưa mở</td></tr>
+        <tr><td><strong>M3</strong></td><td>Review nội bộ / SME xác nhận discovery</td><td>Chưa mở</td></tr>
+        <tr><td><strong>M4</strong></td><td>Báo giá, estimate effort</td><td>Chưa mở</td></tr>
+        <tr><td><strong>M5</strong></td><td>User story + acceptance criteria cho dev</td><td>Chưa mở</td></tr>
+      </table>
+      <p>Gói M1 nằm trong <code>ai-ba-agent-init/</code> — 6 file seed + thư mục <code>memory/</code> theo dõi tiến độ, câu hỏi, quyết định.</p>
+    </section>
+
+    <!-- ═══ 02 KNOWLEDGE (tóm tắt) ═══ -->
+    <section id="knowledge">
+      <h2><span class="num">02</span>Kiến thức cần có để đọc M1</h2>
+      <p class="intro">Tóm tắt — chi tiết nằm trong từng file <code>technical/</code> và <code>memory/</code>.</p>
+
+      <table>
+        <tr><th>Nhóm</th><th>Cần biết gì</th></tr>
+        <tr>
+          <td><strong>Nghiệp vụ</strong></td>
+          <td>Luật cờ VN · FEN/PGN · 3 mode (Ngửa/Úp/Thế) · Elo &amp; matchmaking · bot version + Active Bot · replay</td>
+        </tr>
+        <tr>
+          <td><strong>Kỹ thuật</strong></td>
+          <td>Next.js + Express + WebSocket · sandbox chạy code user · Monaco + Canvas · GameRegistry (đa game) · Redis · code nền chưa có DB</td>
+        </tr>
+        <tr>
+          <td><strong>BA / Discovery</strong></td>
+          <td>6 file seed (BU → entities → UC → screen-flow → function-list) · marker nguồn · memory (Q/CF/DEC/ASM) · M1 ≠ estimate (M4)</td>
+        </tr>
+        <tr>
+          <td><strong>Brownfield</strong></td>
+          <td>Giữ <code>backend/src/core/</code>, xóa Bomberman · docs mô tả đích, code mô tả hiện trạng — đối chiếu cả hai</td>
+        </tr>
+      </table>
+
+      <h3>Đọc theo thứ tự</h3>
+      <p><code>REVIEW-M1</code> → <code>meeting-note</code> (§6 brownfield) → 6 file <code>technical/</code> → <code>memory/decisions-log</code> + <code>source-index</code> → skim <code>backend/</code> / <code>frontend/</code>.</p>
+    </section>
+
+    <!-- ═══ 03 BA ═══ -->
+    <section id="lessons">
+      <h2><span class="num">03</span>Kinh nghiệm xương máu — bài học rút ra từ M1</h2>
+      <p>Chốt <strong>có code hay không</strong> muộn một nhịp là rewrite cả gói. Docs là ý định, code là thực tế — lệch thì ghi conflict và hỏi, đừng tự “hòa giải” trong đầu.</p>
+      <p>Thiếu wireframe mà vẫn cố viết spec = bịa. Có markdown chưa Pass REVIEW = mới dừng ở bản nháp. Estimate từ function-list seed = số đẹp nhưng chưa ai dám ký.</p>
+      <p>Gom câu hỏi một lần, cập nhật tài liệu một lần — hỏi rời là artifact lệch. Giả định tạm phải hủy ngay khi đã có câu trả lời, kẻo doc cũ cãi doc mới.</p>
+      <p>BA không quyết hộ khi chưa được ủy quyền — làm rõ lựa chọn để đúng người quyết. Domain game cũ không phải bản đồ game mới: reverse UI Bomberman rồi gọi là Xiangqi là sai hướng ngay từ đầu.</p>
+    </section>
+
+    <footer>
+      <code>ai-ba-agent-init/</code> · REVIEW-M1.md · analysis/business/technical/ · memory/
+    </footer>
+
+  </div>
+</body>
+</html>
